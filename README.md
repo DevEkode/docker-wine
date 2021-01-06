@@ -1,7 +1,9 @@
 # docker-wine
-> `winehq-devel` Docker Images
+> `winehq-stable` Docker Images
 
-- `docker-wine-base` - Ubuntu based Docker image with `winehq-devel` package installed.
+Forked from https://github.com/MaloneTuningLtd/docker-wine to update docker images to the last stable wine and dotnet version.
+
+- `docker-wine-base` - Ubuntu based Docker image with `winehq-stable` package installed.
 - `docker-wine-dotnet` - Docker image with Wine and `dotnet20`, `dotnet40`, and `dotnet_verifier` installed.
 
 These Docker images were built to be used alongside a build environment for easier scripting/building for .NET applications, (specifically with `docker-wine-dotnet`).
