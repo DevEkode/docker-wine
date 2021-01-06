@@ -9,10 +9,18 @@ on:
 jobs:
 
   build:
-
+    name: Build and push image to Github Packages
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file ./wine-base/Dockerfile --tag ekode/docker-wine-base:latest
+    - name: Check out the repo
+      uses: actions/checkout@v2
+    - name: Build and push the Docker image
+      uses: docker/build-push-action@v1
+      with:
+        context: .
+        file: ./wine-base/Dockerfile
+        tags: ekode/docker-wine-base:latest
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        registry: docker.pkg.github.com
+        repository: DevEkode/docker-wine/docker-wine-base
