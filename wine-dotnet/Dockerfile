@@ -37,13 +37,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && winetricks --unattended dotnet20 dotnet40 dotnet_verifier
 
 # Copy Over Wine Prefix
-FROM ekode/docker-wine-base:latest
+#FROM ekode/docker-wine-base:latest
 
-ENV WINEPREFIX /root/.wine
-ENV WINEARCH win32
+#ENV WINEPREFIX /root/.wine
+#ENV WINEARCH win32
 
-RUN mkdir -p /usr/share/wine/mono
+#RUN mkdir -p /usr/share/wine/mono
 
-COPY --from=0 /root/.wine /root/.wine
-COPY --from=0 /tmp/wine-mono /usr/share/wine/mono
+#COPY --from=0 /root/.wine /root/.wine
+#COPY --from=0 /tmp/wine-mono /usr/share/wine/mono
 
