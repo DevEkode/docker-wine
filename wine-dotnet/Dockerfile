@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && chmod +x /usr/local/bin/*.sh \
     # Mono For Wine
     && mkdir /tmp/wine-mono \
-    && wget https://dl.winehq.org/wine/wine-mono/${WINE_MONO_VERSION}/wine-mono-${WINE_MONO_VERSION}.msi -O /tmp/wine-mono/wine-mono-${WINE_MONO_VERSION} \ 
+    && wget https://dl.winehq.org/wine/wine-mono/${WINE_MONO_VERSION}/wine-mono-${WINE_MONO_VERSION}-x86.msi -O /tmp/wine-mono/wine-mono-${WINE_MONO_VERSION} \ 
     # Install .NET Framework 2.0 and 4.0
     && wine wineboot --init \
     && waitforprocess.sh wineserver \
