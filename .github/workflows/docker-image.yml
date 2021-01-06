@@ -32,7 +32,7 @@ jobs:
         context: ./wine-base
         file: ./wine-base/Dockerfile
         tags: ekode/docker-wine-base:latest
-        
+
   docker-wine-dotnet-4:
     name: Build and publish docker with dotnet 4.0
     runs-on: ubuntu-20.04
@@ -60,7 +60,7 @@ jobs:
         file: ./wine-dotnet/Dockerfile
         tags: ekode/docker-wine-dotnet:4
     
-  docker-wine-dotnet-4:
+  docker-wine-dotnet-462:
     name: Build and publish docker with dotnet 4.6.2
     runs-on: ubuntu-20.04
     needs: docker-wine-base
