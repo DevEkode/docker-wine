@@ -1,7 +1,7 @@
-FROM maloneweb/docker-wine-base:latest
+FROM ekode/docker-wine-base:latest
 
 ARG DEBIAN_FRONTEND="noninteractive"
-ARG WINE_MONO_VERSION="4.7.3"
+ARG WINE_MONO_VERSION="5.1.1"
 
 # XVFB
 ARG DISPLAY=:0
