@@ -1,6 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND="noninteractive"
+ARG WINE_BRANCH="stable"
 
 RUN BUILD_DEPENDENCIES="\
   build-essential \
@@ -23,7 +24,7 @@ RUN BUILD_DEPENDENCIES="\
     # use newer key...
     && wget https://dl.winehq.org/wine-builds/winehq.key -O - | apt-key add - \
     && apt-add-repository https://dl.winehq.org/wine-builds/ubuntu \
-    && apt-get update -qq && apt install -yqq --no-install-recommends winehq-devel \
+    && apt-get update -qq && apt install -yqq --no-install-recommends winehq-${WINE_BRANCH} \
     && apt-get remove --purge -yqq $BUILD_DEPENDENCIES libsdl2-dev \
     && apt-get autoremove -yqq \
     && rm -rf /var/lib/apt/lists/*
