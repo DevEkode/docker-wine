@@ -7,8 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  wine-base:
-    name: wine-base docker
+  docker-build:
+    name: Build and publish docker
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
       with:
         push: true
         context: ./wine-dotnet
-        file: ./wine-base/Dockerfile
+        file: ./wine-dotnet/Dockerfile
         tags: |
           ekode/docker-wine-dotnet:latest
           ekode/docker-wine-dotnet:4
@@ -48,5 +48,5 @@ jobs:
       with:
         push: true
         context: ./wine-dotnet
-        file: ./wine-base/Dockerfile.net462
+        file: ./wine-dotnet/Dockerfile.net462
         tags: ekode/docker-wine-dotnet:462
