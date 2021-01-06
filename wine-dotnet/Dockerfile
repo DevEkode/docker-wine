@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && winetricks --unattended dotnet20 dotnet40 dotnet_verifier
 
 # Copy Over Wine Prefix
-FROM maloneweb/docker-wine-base:latest
+FROM ekode/docker-wine-base:latest
 
 ENV WINEPREFIX /root/.wine
 ENV WINEARCH win32
