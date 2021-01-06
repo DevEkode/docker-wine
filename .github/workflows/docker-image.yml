@@ -28,4 +28,5 @@ jobs:
       with:
         push: true
         context: ./wine-base
+        file: ./wine-base/Dockerfile
         tags: ekode/docker-wine-base:latest
