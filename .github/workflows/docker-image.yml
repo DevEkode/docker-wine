@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ./wine-base/ --file Dockerfile --tag ekode/docker-wine-base:latest
+      run: docker build . --file ./wine-base/Dockerfile --tag ekode/docker-wine-base:latest
