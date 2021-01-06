@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND="noninteractive"
-ARG WINE_BRANCH="stable"
+ARG WINE_BRANCH="devel"
 
 RUN BUILD_DEPENDENCIES="\
   build-essential \
