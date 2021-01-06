@@ -23,4 +23,3 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
-        repository: DevEkode/docker-wine/docker-wine-base
